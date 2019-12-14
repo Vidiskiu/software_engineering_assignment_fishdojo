@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('post','ProductController@postRequest');
+Route::get('get','ProductController@getRequest');
