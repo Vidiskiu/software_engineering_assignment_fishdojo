@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
@@ -41,3 +43,6 @@ Route::get('/wishlist', function () {
 
 Route::get('post','ProductController@postRequest');
 Route::get('get','ProductController@getRequest');
+
+Auth::routes();
+
