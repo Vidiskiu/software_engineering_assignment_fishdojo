@@ -41,8 +41,11 @@ Route::get('/wishlist', function () {
     return view('wishlist');
 })->name('wishlist');
 
+Route::get('/details', function (){
+    return view('details');
+})->name('details');
+
 Route::get('post','ProductController@postRequest');
 Route::get('get','ProductController@getRequest');
 
 Auth::routes();
-

@@ -2,17 +2,18 @@
 
 @section('content')
 
+<!-- Slider -->
 <section id="home-section" class="hero">
-        <div class="home-slider owl-carousel">
+    <div class="home-slider owl-carousel">
         <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
         <div class="overlay"></div>
         <div class="container">
             <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-12 ftco-animate text-center">
-                <h1 class="mb-2">We serve Fresh Fishes &amp; also Fishes</h1>
-                <h2 class="subheading mb-4">We deliver fresh fishes &amp; fishes</h2>
-                <p><a href="#" class="btn btn-primary">View Details</a></p>
+                <h1 class="mb-2">Purchase Fish &amp; Fish Products</h1>
+                <h2 class="subheading mb-4">Delivers straight from the sea</h2>
+                <p><a href="{{route('details')}}" class="btn btn-primary">View Details</a></p>
             </div>
 
             </div>
@@ -25,9 +26,9 @@
             <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-sm-12 ftco-animate text-center">
-                <h1 class="mb-2">100% Fresh &amp; Fishes</h1>
-                <h2 class="subheading mb-4">We deliver fishes &amp; fishes</h2>
-                <p><a href="#" class="btn btn-primary">View Details</a></p>
+                <h1 class="mb-2">100% Fresh Fish</h1>
+                <h2 class="subheading mb-4">Delivers straight from the seas</h2>
+            <p><a href="{{route('details')}}" class="btn btn-primary">View Details</a></p>
             </div>
 
             </div>
@@ -35,10 +36,11 @@
         </div>
     </div>
 </section>
+<!-- End Slider -->
 
 <section class="ftco-section">
-        <div class="container">
-            <div class="row no-gutters ftco-services">
+<div class="container">
+    <div class="row no-gutters ftco-services">
         <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
         <div class="media block-6 services mb-md-0 mb-4">
             <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
@@ -57,7 +59,7 @@
             </div>
             <div class="media-body">
             <h3 class="heading">Always Fresh</h3>
-            <span>Product well package</span>
+            <span>Product well packaged</span>
             </div>
         </div>
         </div>
@@ -78,21 +80,21 @@
                 <span class="flaticon-customer-service"></span>
             </div>
             <div class="media-body">
-            <h3 class="heading">Support</h3>
-            <span>24/7 Support</span>
+            <h3 class="heading">24/7 Support</h3>
+            <span>Always Happy to Serve</span>
             </div>
         </div>
         </div>
     </div>
-        </div>
-    </section>
+</div>
+</section>
 
 <section class="ftco-section">
     <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
         <div class="col-md-12 heading-section text-center ftco-animate">
         <span class="subheading">Featured Products</span>
-        <h2 class="mb-4">Our Products</h2>
+        <h2 class="mb-4">On Demand Items</h2>
         <p>Far far away, behind the word sea, far away from earth</p>
         </div>
     </div>
@@ -330,24 +332,5 @@
         </div>
     </div>
 </section>
-
-<hr>
-
-<footer class="ftco-footer ftco-section">
-    <div class="container">
-    <div class="row">
-        <div class="mouse">
-                    <a href="#" class="mouse-icon">
-                        <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-                    </a>
-                </div>
-        </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            End of Page
-        </div>
-    </div>
-    </div>
-</footer>
 
 @endsection

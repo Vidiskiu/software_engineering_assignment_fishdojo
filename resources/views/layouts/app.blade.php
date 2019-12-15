@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <title>FishDojo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,9 +27,9 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  </head>
+    </head>
 
-  <body>
+    <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{route('index')}}">FishDojo</a>
@@ -43,12 +43,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-
-                    <a class="dropdown-item" href="{{route('shop')}}">Shop</a>
+                        <a class="dropdown-item" href="{{route('shop')}}">Shop</a>
                         <a class="dropdown-item" href="{{route('wishlist')}}">Wishlist</a>
-                    <a class="dropdown-item" href="{{route('product-single')}}">Single Product</a>
-                    <a class="dropdown-item" href="{{route('cart')}}">Cart</a>
-                    <a class="dropdown-item" href="{{route('checkout')}}">Checkout</a>
+                        <a class="dropdown-item" href="{{route('product-single')}}">Single Product</a>
+                        <a class="dropdown-item" href="{{route('cart')}}">Cart</a>
+                        <a class="dropdown-item" href="{{route('checkout')}}">Checkout</a>
                     </div>
                 </li>
 
@@ -70,9 +69,30 @@
     </nav>
     <!-- END nav -->
 
-    @section('content')
+    @yield('content')
 
-    @show
+    <footer class="page-footer font-small blue ftco-section">
+        <div class="container">
+        <div class="row">
+            <div class="mouse">
+                        <a href="#" class="mouse-icon">
+                            <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+                        </a>
+                    </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                End of Page
+            </div>
+        </div>
+        </div>
+
+        <div class="footer-copyright text-center mt-2">© 2019 Copyright:
+            <a href="https://github.com/Vidiskiu/software_engineering_assignment_fishdojo">FishDojo</a>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <!-- End Footer -->
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -90,9 +110,7 @@
     <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('js/google-map.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
-  </body>
+    </body>
 </html>
