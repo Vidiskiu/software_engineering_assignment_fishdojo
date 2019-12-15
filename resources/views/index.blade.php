@@ -104,7 +104,7 @@
             @foreach ($products as $product)
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+                    <a href="{{route('product-single', $product->id)}}" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
                         <span class="status">{{$product->sale*100}}%</span>
                         <div class="overlay"></div>
                     </a>

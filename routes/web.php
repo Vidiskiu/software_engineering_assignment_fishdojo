@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\ProductController;
+
 Route::get('/', 'IndexController@show')->name('index');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,9 +33,7 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/product-single', function () {
-    return view('product-single');
-})->name('product-single');
+Route::get('/product-single/{id}', 'ProductController@show')->name('product-single');
 
 Route::get('/wishlist', function () {
     return view('wishlist');

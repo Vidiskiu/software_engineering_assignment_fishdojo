@@ -5,8 +5,8 @@
     <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
-        <h1 class="mb-0 bread">Product Single</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Details</span></p>
+        <h1 class="mb-0 bread">Product Details</h1>
         </div>
     </div>
     </div>
@@ -16,10 +16,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mb-5 ftco-animate">
-                <a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+                <a href={{asset('/images/product-1.jpg')}} class="image-popup"><img src={{asset('/images/product-1.jpg')}} class="img-fluid" alt="Colorlib Template"></a>
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
-                <h3>Bell Pepper</h3>
+                <h3>{{$product->product_name}}</h3>
                 <div class="rating d-flex">
                         <p class="text-left mr-4">
                             <a href="#" class="mr-2">5.0</a>
@@ -36,8 +36,8 @@
                             <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
                         </p>
                     </div>
-                <p class="price"><span>$120.00</span></p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.
+                <p class="price"><span>${{$product->price*(1-$product->sale)}}</span></p>
+                <p>{{$product->description}}
                     </p>
                     <div class="row mt-4">
                         <div class="col-md-6">
@@ -69,7 +69,7 @@
             </div>
             <div class="w-100"></div>
             <div class="col-md-12">
-                <p style="color: #000;">600 kg available</p>
+                <p style="color: #000;">{{$product->quantity}} kg available</p>
             </div>
         </div>
         <p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
@@ -82,7 +82,6 @@
     <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
         <div class="col-md-12 heading-section text-center ftco-animate">
-        <span class="subheading">Products</span>
         <h2 class="mb-4">Related Products</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
         </div>
@@ -90,17 +89,19 @@
     </div>
     <div class="container">
         <div class="row">
+
+            @foreach($relatedProducts as $product)
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+                    <a href="{{route('product-single', $product->id)}}" class="img-prod"><img class="img-fluid" src={{asset('/images/product-1.jpg')}} alt="Colorlib Template">
                         <span class="status">30%</span>
                         <div class="overlay"></div>
                     </a>
                     <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="#">Bell Pepper</a></h3>
+                        <h3><a href="#">{{$product->product_name}}</a></h3>
                         <div class="d-flex">
                             <div class="pricing">
-                                <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+                                <p class="price"><span class="mr-2 price-dc">${{$product->price}}</span><span class="price-sale">${{$product->price*(1-$product->sale)}}</span></p>
                             </div>
                         </div>
                         <div class="bottom-area d-flex px-3">
@@ -119,114 +120,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
-                        <div class="overlay"></div>
-                    </a>
-                    <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="#">Strawberry</a></h3>
-                        <div class="d-flex">
-                            <div class="pricing">
-                                <p class="price"><span>$120.00</span></p>
-                            </div>
-                        </div>
-                        <div class="bottom-area d-flex px-3">
-                            <div class="m-auto d-flex">
-                                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                    <span><i class="ion-ios-menu"></i></span>
-                                </a>
-                                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                    <span><i class="ion-ios-cart"></i></span>
-                                </a>
-                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                    <span><i class="ion-ios-heart"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
-                        <div class="overlay"></div>
-                    </a>
-                    <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="#">Green Beans</a></h3>
-                        <div class="d-flex">
-                            <div class="pricing">
-                                <p class="price"><span>$120.00</span></p>
-                            </div>
-                        </div>
-                        <div class="bottom-area d-flex px-3">
-                            <div class="m-auto d-flex">
-                                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                    <span><i class="ion-ios-menu"></i></span>
-                                </a>
-                                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                    <span><i class="ion-ios-cart"></i></span>
-                                </a>
-                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                    <span><i class="ion-ios-heart"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
-                        <div class="overlay"></div>
-                    </a>
-                    <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="#">Purple Cabbage</a></h3>
-                        <div class="d-flex">
-                            <div class="pricing">
-                                <p class="price"><span>$120.00</span></p>
-                            </div>
-                        </div>
-                        <div class="bottom-area d-flex px-3">
-                            <div class="m-auto d-flex">
-                                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                    <span><i class="ion-ios-menu"></i></span>
-                                </a>
-                                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                    <span><i class="ion-ios-cart"></i></span>
-                                </a>
-                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                    <span><i class="ion-ios-heart"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </section>
 
-
-<footer class="ftco-footer ftco-section">
-        <div class="container">
-            <div class="row">
-                <div class="mouse">
-                            <a href="#" class="mouse-icon">
-                                <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-                            </a>
-                        </div>
-            </div>
-
-            <div class="row">
-            <div class="col-md-12 text-center">
-
-
-
-            </div>
-            </div>
-        </div>
-        </footer>
+@section('topofpage')
+    @include('layouts.topofpage')
+@endsection
 
 <script>
     $(document).ready(function(){

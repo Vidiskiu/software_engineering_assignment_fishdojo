@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -57,9 +58,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($request)
     {
-        //
+        $relatedProducts = Product::orderBy('created_at', 'desc')->groupBy('id')->get();
+        $product = Product::find($request);
+        return view('product-single', ['product'=>$product, 'relatedProducts'=>$relatedProducts]);
     }
 
     /**
