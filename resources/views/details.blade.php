@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="jumbotron bg-color-3 text-white">
 <div class="text-center">
     <h1 class="display-4">Taste the Sea in 4 Simple Clicks</h1>
@@ -64,5 +63,4 @@
 
 </div>
 </div>
-
 @endsection

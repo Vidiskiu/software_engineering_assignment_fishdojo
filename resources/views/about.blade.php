@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="hero-wrap overlay hero-bread">
     <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -139,5 +138,8 @@
     </div>
 </div>
 </section>
+@endsection
 
+@section('topofpage')
+    @include('layouts.topofpage')
 @endsection

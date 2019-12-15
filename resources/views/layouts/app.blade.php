@@ -52,9 +52,9 @@
                 </li>
 
                 <li class="nav-item cta cta-colored"><a href="{{route('cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout') }}" class="nav-item my-auto ml-3">
                     @csrf
-                    <li class="nav-item row ml-1 mt-3">
+                    <li>
                         <button type="submit" class="btn btn-warning">
                                 {{ __('Log out') }}
                         </button>
@@ -72,27 +72,14 @@
     @yield('content')
 
     <footer class="page-footer font-small blue ftco-section">
-        <div class="container">
-        <div class="row">
-            <div class="mouse">
-                        <a href="#" class="mouse-icon">
-                            <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-                        </a>
-                    </div>
-            </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                End of Page
-            </div>
-        </div>
-        </div>
+        
+        @yield('topofpage')
 
         <div class="footer-copyright text-center mt-2">© 2019 Copyright:
             <a href="https://github.com/Vidiskiu/software_engineering_assignment_fishdojo">FishDojo</a>
         </div>
     </footer>
     <!-- Footer -->
-    <!-- End Footer -->
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

@@ -334,3 +334,7 @@
 </section>
 
 @endsection
+
+@section('topofpage')
+    @include('layouts.topofpage')
+@endsection
